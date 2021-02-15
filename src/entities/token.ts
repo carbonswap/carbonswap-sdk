@@ -7,12 +7,10 @@ import { Currency } from './currency'
  * Represents an ERC20 token with a unique address and some metadata.
  */
 export class Token extends Currency {
-  public readonly chainId: ChainId
   public readonly address: string
 
   public constructor(chainId: ChainId, address: string, decimals: number, symbol?: string, name?: string) {
-    super(decimals, symbol, name)
-    this.chainId = chainId
+    super(chainId, decimals, symbol, name)
     this.address = validateAndParseAddress(address)
   }
 
@@ -79,5 +77,7 @@ export const WETH = {
     'Wrapped Ether'
   ),
   [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, '0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6', 18, 'WETH', 'Wrapped Ether'),
-  [ChainId.KOVAN]: new Token(ChainId.KOVAN, '0xd0A1E359811322d97991E03f863a0C30C2cF029C', 18, 'WETH', 'Wrapped Ether')
+  [ChainId.KOVAN]: new Token(ChainId.KOVAN, '0xd0A1E359811322d97991E03f863a0C30C2cF029C', 18, 'WETH', 'Wrapped Ether'),
+  [ChainId.EWC]: new Token(ChainId.EWC, '0x6b3bd0478DF0eC4984b168Db0E12A539Cc0c83cd', 18, 'WEWT', 'Wrapped Energy Web Token'),
+  [ChainId.VOLTA]: new Token(ChainId.VOLTA, '0xDb8B4264b1777e046267b4Cc123f0C9E029cEB2c', 18, 'WVT', 'Wrapped Volta Token')
 }

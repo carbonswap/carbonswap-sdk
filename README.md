@@ -1,4 +1,4 @@
-# Uniswap SDK
+# Grüniswap SDK
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![Actions Status](https://github.com/Uniswap/uniswap-sdk/workflows/CI/badge.svg)](https://github.com/Uniswap/uniswap-sdk)
@@ -14,13 +14,13 @@ To run the tests, follow these steps. You must have at least node v10 and [yarn]
 First clone the repository:
 
 ```sh
-git clone https://github.com/Uniswap/uniswap-sdk.git
+git clone https://github.com/gruniswap/gruniswap-sdk.git
 ```
 
-Move into the uniswap-sdk working directory
+Move into the gruniswap-sdk working directory
 
 ```sh
-cd uniswap-sdk/
+cd gruniswap-sdk/
 ```
 
 Install dependencies

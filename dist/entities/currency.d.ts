@@ -15,6 +15,7 @@ export declare class Currency {
     static readonly ETHER: Currency;
     static readonly EWT: Currency;
     static readonly VT: Currency;
+    static readonly BNB: Currency;
     /**
      * Constructs an instance of the base class `Currency`. The only instance of the base class `Currency` is `Currency.ETHER`.
      * @param decimals decimals of the currency
@@ -31,5 +32,6 @@ export declare class Currency {
 declare const ETHER: Currency;
 declare const EWT: Currency;
 declare const VT: Currency;
+declare const BNB: Currency;
 declare const getNativeCurrency: (chainId: ChainId) => Currency;
-export { ETHER, EWT, VT, getNativeCurrency };
+export { ETHER, EWT, VT, BNB, getNativeCurrency };

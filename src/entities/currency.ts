@@ -20,6 +20,7 @@ export class Currency {
   public static readonly ETHER: Currency = new Currency(ChainId.MAINNET, 18, 'ETH', 'Ether')
   public static readonly EWT: Currency = new Currency(ChainId.EWC, 18, 'EWT', 'Energy Web Token')
   public static readonly VT: Currency = new Currency(ChainId.VOLTA, 18, 'VT', 'Volta Token')
+  public static readonly BNB: Currency = new Currency(ChainId.BSC, 18, 'BNB', 'Binance Coin')
 
   /**
    * Constructs an instance of the base class `Currency`. The only instance of the base class `Currency` is `Currency.ETHER`.
@@ -92,6 +93,7 @@ export class Currency {
 const ETHER = Currency.ETHER
 const EWT = Currency.EWT
 const VT = Currency.VT
+const BNB = Currency.BNB
 
 const getNativeCurrency = (chainId: ChainId) => {
   switch(chainId) {
@@ -99,9 +101,11 @@ const getNativeCurrency = (chainId: ChainId) => {
       return EWT
     case ChainId.VOLTA:
       return VT
+    case ChainId.BSC:
+      return BNB
     default:
       return ETHER
   }
 }
 
-export { ETHER, EWT, VT, getNativeCurrency }
+export { ETHER, EWT, VT, BNB, getNativeCurrency }

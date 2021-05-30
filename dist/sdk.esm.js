@@ -21,6 +21,7 @@ var ChainId;
   ChainId[ChainId["RINKEBY"] = 4] = "RINKEBY";
   ChainId[ChainId["G\xD6RLI"] = 5] = "G\xD6RLI";
   ChainId[ChainId["KOVAN"] = 42] = "KOVAN";
+  ChainId[ChainId["BSC"] = 56] = "BSC";
   ChainId[ChainId["EWC"] = 246] = "EWC";
   ChainId[ChainId["VOLTA"] = 73799] = "VOLTA";
 })(ChainId || (ChainId = {}));
@@ -448,9 +449,11 @@ var Currency = /*#__PURE__*/function () {
 Currency.ETHER = /*#__PURE__*/new Currency(ChainId.MAINNET, 18, 'ETH', 'Ether');
 Currency.EWT = /*#__PURE__*/new Currency(ChainId.EWC, 18, 'EWT', 'Energy Web Token');
 Currency.VT = /*#__PURE__*/new Currency(ChainId.VOLTA, 18, 'VT', 'Volta Token');
+Currency.BNB = /*#__PURE__*/new Currency(ChainId.BSC, 18, 'BNB', 'Binance Coin');
 var ETHER = Currency.ETHER;
 var EWT = Currency.EWT;
 var VT = Currency.VT;
+var BNB = Currency.BNB;
 
 var _getNativeCurrency = function _getNativeCurrency(chainId) {
   switch (chainId) {
@@ -459,6 +462,9 @@ var _getNativeCurrency = function _getNativeCurrency(chainId) {
 
     case ChainId.VOLTA:
       return VT;
+
+    case ChainId.BSC:
+      return BNB;
 
     default:
       return ETHER;
@@ -527,7 +533,7 @@ function currencyEquals(currencyA, currencyB) {
     return currencyA === currencyB;
   }
 }
-var WETH = (_WETH = {}, _WETH[ChainId.MAINNET] = /*#__PURE__*/new Token(ChainId.MAINNET, '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.ROPSTEN] = /*#__PURE__*/new Token(ChainId.ROPSTEN, '0xc778417E063141139Fce010982780140Aa0cD5Ab', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.RINKEBY] = /*#__PURE__*/new Token(ChainId.RINKEBY, '0xc778417E063141139Fce010982780140Aa0cD5Ab', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.GÖRLI] = /*#__PURE__*/new Token(ChainId.GÖRLI, '0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.KOVAN] = /*#__PURE__*/new Token(ChainId.KOVAN, '0xd0A1E359811322d97991E03f863a0C30C2cF029C', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.EWC] = /*#__PURE__*/new Token(ChainId.EWC, '0x6b3bd0478DF0eC4984b168Db0E12A539Cc0c83cd', 18, 'WEWT', 'Wrapped Energy Web Token'), _WETH[ChainId.VOLTA] = /*#__PURE__*/new Token(ChainId.VOLTA, '0xDb8B4264b1777e046267b4Cc123f0C9E029cEB2c', 18, 'WVT', 'Wrapped Volta Token'), _WETH);
+var WETH = (_WETH = {}, _WETH[ChainId.MAINNET] = /*#__PURE__*/new Token(ChainId.MAINNET, '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.ROPSTEN] = /*#__PURE__*/new Token(ChainId.ROPSTEN, '0xc778417E063141139Fce010982780140Aa0cD5Ab', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.RINKEBY] = /*#__PURE__*/new Token(ChainId.RINKEBY, '0xc778417E063141139Fce010982780140Aa0cD5Ab', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.GÖRLI] = /*#__PURE__*/new Token(ChainId.GÖRLI, '0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.KOVAN] = /*#__PURE__*/new Token(ChainId.KOVAN, '0xd0A1E359811322d97991E03f863a0C30C2cF029C', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.EWC] = /*#__PURE__*/new Token(ChainId.EWC, '0x6b3bd0478DF0eC4984b168Db0E12A539Cc0c83cd', 18, 'WEWT', 'Wrapped Energy Web Token'), _WETH[ChainId.VOLTA] = /*#__PURE__*/new Token(ChainId.VOLTA, '0xDb8B4264b1777e046267b4Cc123f0C9E029cEB2c', 18, 'WVT', 'Wrapped Volta Token'), _WETH[ChainId.BSC] = /*#__PURE__*/new Token(ChainId.BSC, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'WBNB', 'Wrapped BNB'), _WETH);
 
 var _toSignificantRoundin, _toFixedRounding;
 var Decimal = /*#__PURE__*/toFormat(_Decimal);
@@ -1661,5 +1667,5 @@ var Fetcher = /*#__PURE__*/function () {
   return Fetcher;
 }();
 
-export { ChainId, Currency, CurrencyAmount, ETHER, EWT, Fetcher, Fraction, INIT_CODE_HASH, InsufficientInputAmountError, InsufficientReservesError, MINIMUM_LIQUIDITY, Pair, Percent, Price, Rounding, Route, Router, Token, TokenAmount, Trade, TradeType, VT, WETH, currencyEquals, _getNativeCurrency as getNativeCurrency, inputOutputComparator, tradeComparator };
+export { BNB, ChainId, Currency, CurrencyAmount, ETHER, EWT, Fetcher, Fraction, INIT_CODE_HASH, InsufficientInputAmountError, InsufficientReservesError, MINIMUM_LIQUIDITY, Pair, Percent, Price, Rounding, Route, Router, Token, TokenAmount, Trade, TradeType, VT, WETH, currencyEquals, _getNativeCurrency as getNativeCurrency, inputOutputComparator, tradeComparator };
 //# sourceMappingURL=sdk.esm.js.map
